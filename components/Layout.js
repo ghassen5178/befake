@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import { Inter } from "next/font";
 
 const inter = Inter({ subsets: ["latin"] });
