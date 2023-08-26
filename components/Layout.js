@@ -12,7 +12,7 @@ export default function Layout({ children }) {
         >
             <header className="py-8 border-b-2 px-4 lg:border-x-2 border-white/10 bg-[#0d0d0d]">
                 <h1 className="text-4xl font-bold text-center">
-                    BeUnblurred.
+                    Bepunti.
                 </h1>
                 <p className="text-center mt-1 opacity-75">
                     View your friends' BeReal without posting one.
@@ -33,9 +33,8 @@ export default function Layout({ children }) {
                 <p>
                     <b>This site is in no way affiliated with BeReal SAS.</b>
                     <br />
-                    This is a school project made by{" "}
                     <a
-                        href="https://marco.win"
+                        href=
                         target="_blank"
                         rel="noopener noreferrer"
                         className="underline decoration-dashed hover:opacity-75 transition-all"
