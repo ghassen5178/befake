@@ -1,48 +1,28 @@
-import { Inter } from "next/font/google";
+import Head from 'next/head';
+import { useEffect } from 'react';
+import { createGlobalStyle } from 'styled-components';
 
-const inter = Inter({ subsets: ["latin"] });
+const GlobalStyle = createGlobalStyle`
+  /* Your global styles here */
+`;
 
 export default function Layout({ children }) {
-    return (<>
-        <div
-            className={`
-                flex flex-col overflow-auto w-full min-h-screen h-full
-                lg:max-w-xl mx-auto ${inter.className}
-            `}
-        >
-            <header className="py-8 border-b-2 px-4 lg:border-x-2 border-white/10 bg-[#0d0d0d]">
-                <h1 className="text-4xl font-bold text-center">
-                    Bepunti.
-                </h1>
-                <p className="text-center mt-1 opacity-75">
-                    View your friends' BeReal without posting one.
-                </p>
-            </header>
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  }, []);
 
-            <main className="lg:px-8 px-4 py-8">
-                {children}
-            </main>
-
-            <footer
-                className={`
-                    mt-auto lg:max-w-xl mx-auto w-full bg-[#0d0d0d]
-                    py-8 lg:px-8 px-4 text-sm text-center
-                    border-t-2 lg:border-x-2 border-white/10 ${inter.className}
-                `}
-            >
-                <p>
-                    <b>This site is in no way affiliated with BeReal SAS.</b>
-                    <br />
-                    <a
-                        href=
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-dashed hover:opacity-75 transition-all"
-                    >
-                        Marco Ceccon
-                    </a>.
-                </p>
-            </footer>
-        </div>
-    </>);
+  return (
+    <>
+      <Head>
+        <title>Bepunti</title>
+      </Head>
+      <GlobalStyle />
+      <div className="flex flex-col overflow-auto w-full min-h-screen h-full lg:max-w-xl mx-auto">
+        {/* ... rest of your component */}
+      </div>
+    </>
+  );
 }
